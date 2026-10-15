@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わたしのかぞく</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Meiryo", sans-serif;
+        }
+
+        body {
+            background: #fff;
+            padding: 30px 20px;
+            line-height: 2;
+        }
+
+        .page {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 26px;
+            color: #2c3e50;
+        }
+
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .row-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .box {
+            border: 2px solid #333;
+            padding: 12px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            background: #fefefe;
+            width: 145px;
+            border-radius: 8px;
+        }
+
+        .box img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: block;
+            border: 2px solid #ddd;
+        }
+
+        .line-h {
+            width: 30px;
+            height: 2px;
+            background: #333;
+            flex-shrink: 0;
+        }
+
+        .line-v {
+            width: 2px;
+            height: 25px;
+            background: #333;
+        }
+
+        .family-branch {
+            width: min(100%, 650px);
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .family-branch::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: #333;
+        }
+
+        .siblings-line {
+            height: 2px;
+            background: #333;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .sibling-connectors {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+        }
+
+        .sibling-connectors div {
+            height: 20px;
+            width: 2px;
+            background: #333;
+            justify-self: center;
+        }
+
+        .row-bottom {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            width: 100%;
+        }
+
+        .row-bottom .box {
+            width: 100%;
+            min-width: 0;
+            font-size: 20px;
+            padding: 10px 5px;
+        }
+
+        .row-bottom .box img {
+            width: 65px;
+            height: 65px;
+        }
+
+        .me {
+            background: #eef5ff;
+            border-color: #5277bd;
+        }
+
+        .story {
+            border-top: 2px dashed #aaa;
+            padding-top: 30px;
+        }
+
+        .sentence {
+            margin: 18px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .jp {
+            font-size: 20px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .romaji {
+            font-size: 15px;
+            color: #7f8c8d;
+        }
+
+        .id {
+            font-size: 14px;
+            color: #27ae60;
+        }
+
+        @media (max-width: 550px) {
+            body {
+                padding: 20px 8px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            .row-top {
+                gap: 8px;
+            }
+
+            .row-top .box {
+                width: 115px;
+                padding: 8px 5px;
+            }
+
+            .row-top .box img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .line-h {
+                width: 12px;
+            }
+
+            .family-branch {
+                width: 100%;
+            }
+
+            .row-bottom {
+                gap: 5px;
+            }
+
+            .row-bottom .box {
+                font-size: 15px;
+                padding: 8px 2px;
+                overflow-wrap: anywhere;
+            }
+
+            .row-bottom .box img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .jp {
+                font-size: 17px;
+            }
+
+            .romaji {
+                font-size: 13px;
+            }
+
+            .id {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <h1>わたしのかぞく</h1>
+
+    <div class="tree">
+
+        <!-- Ayah dan Ibu -->
+        <div class="row-top">
+            <div class="box">
+                <img src="ayh1.jpeg" alt="Ayah">
+                ちち
+            </div>
+
+            <div class="line-h"></div>
+
+            <div class="box">
+                <img src="ibu.jpeg" alt="Ibu">
+                はは
+            </div>
+        </div>
+
+        <div class="line-v"></div>
+
+        <!-- Garis penghubung empat bersaudara -->
+        <div class="family-branch">
+            <div class="siblings-line"></div>
+
+            <div class="sibling-connectors">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Tiga kakak perempuan dan saya -->
+            <div class="row-bottom">
+
+                <div class="box">
+                    <img src="kk1.jpeg" alt="Kakak perempuan pertama">
+                    あね (1)
+                </div>
+
+                <div class="box">
+                    <img src="kk2.jpeg" alt="Kakak perempuan kedua">
+                    あね (2)
+                </div>
+
+                <div class="box">
+                    <img src="kk3.jpeg" alt="Kakak perempuan ketiga">
+                    あね (3)
+                </div>
+
+                <div class="box me">
+                    <img src="WhatsApp Image 2026-10-15 at 23.10.01.jpeg" alt="Saya">
+                    わたし
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Cerita keluarga -->
+    <div class="story">
+
+        <div class="sentence">
+            <div class="jp">これはわたしのかぞくです。</div>
+            <div class="romaji">Kore wa watashi no kazoku desu.</div>
+            <div class="id">→ Ini keluarga saya.</div>
+        </div>
+
+        <div class="sentence">
+            <div class="jp">わたしのかぞくはろくにんです。</div>
+            <div class="romaji">Watashi no kazoku wa rokunin desu.</div>
+            <div class="id">→ Keluarga saya beranggotakan 6 orang.</div>
+        </div>
+
+        <div class="sentence">
+            <div class="jp">ちちとははとあねがさんにんとわたしです。</div>
+            <div class="romaji">Chichi to haha to ane ga sannin to watashi desu.</div>
+            <div class="id">→ Anggota keluarga saya adalah ayah, ibu, tiga kakak perempuan, dan saya.</div>
+        </div>
+
+        <div class="sentence">
+            <div class="jp">わたしはよにんきょうだいです。</div>
+            <div class="romaji">Watashi wa yonin kyōdai desu.</div>
+            <div class="id">→ Kami bersaudara 4 orang.</div>
+        </div>
+
+        <div class="sentence">
+            <div class="jp">わたしにはあねがさんにんいます。</div>
+            <div class="romaji">Watashi ni wa ane ga sannin imasu.</div>
+            <div class="id">→ Saya mempunyai tiga kakak perempuan.</div>
+        </div>
+
+        <div class="sentence">
+            <div class="jp">わたしはいちばんしたです。</div>
+            <div class="romaji">Watashi wa ichiban shita desu.</div>
+            <div class="id">→ Saya adalah anak paling bungsu.</div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
